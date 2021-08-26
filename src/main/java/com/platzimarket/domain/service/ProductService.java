@@ -32,10 +32,10 @@ public class ProductService {
     }
 
     public Product save(Product product){
-        return  productRepository.save(product);
+        return productRepository.save(product);
     }
 
-    public boolean delete(int productId){
+    public boolean deleteById(int productId){
         if(getProduct(productId).isPresent()) {
             productRepository.delete(productId);
             return true;

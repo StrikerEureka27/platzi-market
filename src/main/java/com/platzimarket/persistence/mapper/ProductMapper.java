@@ -2,9 +2,7 @@ package com.platzimarket.persistence.mapper;
 
 import com.platzimarket.domain.Product;
 import com.platzimarket.persistence.entity.Producto;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -23,6 +21,7 @@ public interface ProductMapper {
     Product toProduct(Producto producto);
     List<Product> toProducts(List<Producto> productos); /*Como ya esta mapeado unicamente indicamos el preceso inverso*/
 
+    @InheritInverseConfiguration
     @Mapping(target = "codigoBarras", ignore = true)
     Producto toProducto(Product product);
 }

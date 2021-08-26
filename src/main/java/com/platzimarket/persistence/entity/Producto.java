@@ -11,7 +11,7 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //id_autoincrementable
     @Column(name="id_producto")
     private Integer idProducto;
-    @Column(name = "nombre")
+
     private String nombre;
     @Column(name="id_categoria")
     private Integer idCategoria;
@@ -21,15 +21,12 @@ public class Producto {
     private Integer precioVenta;
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
-    @Column
+
     private Boolean estado;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
-
-    @OneToMany(mappedBy = "producto")
-    private List<ComprasProducto> comprasProducto;
 
     public Integer getIdProducto() {
         return idProducto;
@@ -95,11 +92,4 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public List<ComprasProducto> getComprasProducto() {
-        return comprasProducto;
-    }
-
-    public void setComprasProducto(List<ComprasProducto> comprasProducto) {
-        this.comprasProducto = comprasProducto;
-    }
 }

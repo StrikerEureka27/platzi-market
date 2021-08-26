@@ -19,9 +19,12 @@ public class Cliente {
     private String apellidoCliente;
 
     @Column(name = "celular")
-    private Integer celular;
+    private Long celular;
 
     @Column(name = "direccion")
+    private String direccion;
+
+    @Column(name = "correo_electronico")
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
@@ -51,12 +54,20 @@ public class Cliente {
         this.apellidoCliente = apellidoCliente;
     }
 
-    public Integer getCelular() {
+    public Long getCelular() {
         return celular;
     }
 
-    public void setCelular(Integer celular) {
+    public void setCelular(Long celular) {
         this.celular = celular;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getCorreoElectronico() {
@@ -65,5 +76,13 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 }

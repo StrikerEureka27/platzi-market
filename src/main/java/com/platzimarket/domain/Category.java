@@ -3,7 +3,6 @@ package com.platzimarket.domain;
 public class Category {
     private int categoryId;
     private String description;
-    private String category;
     private boolean active;
 
     public int getCategoryId() {
@@ -30,11 +29,4 @@ public class Category {
         this.description = description;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 }
